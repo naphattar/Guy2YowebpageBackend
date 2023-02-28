@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv')
 
 dotenv.config();
-const databaseurl = "mongodb+srv://naphattar:raklungkeaw@guy2yodatabase.mzb768d.mongodb.net/?retryWrites=true&w=majority";
-//const databaseurl = `${process.env.DatabaseURL}`;
+
+const databaseurl = `${process.env.DatabaseURL}`;
 
 exports.connect = () =>{
     // database connecting
