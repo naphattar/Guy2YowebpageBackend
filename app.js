@@ -112,9 +112,7 @@ app.post('/welcome',auth,(req,res) =>{
 app.put('/updateuserscore',async(req,res)=>{
     try{
         const {username,newscore} = req.body;
-        console.log(username,newscore);
         const oldUser = await User.findOne({username});
-        console.log(oldUser);
         if(newscore >= oldUser.highscore){
             await oldUser.updateOne({
                 $set: {highscore: newscore}
