@@ -18,9 +18,10 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({extended : true}));
 
 const corsOptions = {
-    origin: 'https://guy2yowebpage.vercel.app/',
-    methods : "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
+    origin: 'https://guy2yowebpage.vercel.app/', // use your actual domain name (or localhost), using * is not recommended
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
+    credentials: true
 };
 
 app.use(cors(corsOptions));
