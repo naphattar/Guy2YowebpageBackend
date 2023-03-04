@@ -19,6 +19,7 @@ app.use(express.urlencoded({extended : true}));
 
 const corsOptions = {
     origin: 'guy2yowebpage.vercel.app',
+    methods : "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
 };
 
