@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const db = require('./config/database');
 const cors = require('cors');
-
+const bodyParser = require("body-parser");
 const User = require('./model/user');
 const auth = require('./middleware/auth');
 
@@ -14,6 +14,7 @@ db.connect();
 const app = express();
 app.use(express.static("public"));
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(express.urlencoded({extended : true}));
 
 const corsOptions = {
